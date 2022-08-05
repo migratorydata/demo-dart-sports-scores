@@ -9,12 +9,14 @@ import 'configuration.dart';
 
 final tableMatches = querySelector('#matches') as TableElement;
 final console = querySelector('#console') as TextAreaElement;
-final migratoryDataClient = createAndConnectClient();
+final migratoryDataClient = MigratoryDataClient();
 
 var simulationRunning = false;
 
 void main() {
   createMatchesTable();
+
+  connectClient();
 
   querySelector('#start_simulation')?.onClick.listen(startSimulation);
 }
@@ -54,16 +56,13 @@ void scoreSimulation() {
   }
 }
 
-MigratoryDataClient createAndConnectClient() {
-  var client = MigratoryDataClient();
-  client.setEntitlementToken(token);
-  client.setListener(ListenerImpl());
-  client.setEncryption(encryption);
-  client.setServers([server]);
-  client.subscribe([subject]);
-  client.connect();
-
-  return client;
+void connectClient() {
+  migratoryDataClient.setEntitlementToken(token);
+  migratoryDataClient.setListener(ListenerImpl());
+  migratoryDataClient.setEncryption(encryption);
+  migratoryDataClient.setServers([server]);
+  migratoryDataClient.subscribe([subject]);
+  migratoryDataClient.connect();
 }
 
 class ListenerImpl implements MigratoryDataListener {
