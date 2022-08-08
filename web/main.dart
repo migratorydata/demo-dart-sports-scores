@@ -8,17 +8,14 @@ import 'package:migratorydata_client_dart_v6/client.dart';
 import 'configuration.dart';
 
 final tableMatches = querySelector('#matches') as TableElement;
-final console = querySelector('#console') as TextAreaElement;
 final migratoryDataClient = MigratoryDataClient();
-
-var simulationRunning = false;
 
 void main() {
   createMatchesTable();
 
   connectClient();
 
-  querySelector('#start_simulation')?.onClick.listen(startSimulation);
+  startSimulation();
 }
 
 void createMatchesTable() {
@@ -35,14 +32,11 @@ void createMatchesTable() {
   });
 }
 
-void startSimulation(Event e) {
-  if (simulationRunning == false) {
-    writeToConsole('Simulation started!\n');
-    simulationRunning = true;
-    Timer.periodic(Duration(seconds: 2), (Timer t) {
-      scoreSimulation();
-    });
-  }
+void startSimulation() {
+  print('Simulation started!');
+  Timer.periodic(Duration(seconds: 2), (Timer t) {
+    scoreSimulation();
+  });
 }
 
 void scoreSimulation() {
@@ -71,11 +65,6 @@ void connectClient() {
   migratoryDataClient.connect();
 }
 
-void writeToConsole(data) {
-  console.appendText(data);
-  console.scrollTop = console.scrollHeight;
-}
-
 class ListenerImpl implements MigratoryDataListener {
   @override
   void onMessage(MigratoryDataMessage message) {
@@ -94,13 +83,13 @@ class ListenerImpl implements MigratoryDataListener {
       } else {
         flash(row.cells[3], row.cells[4]);
       }
-      writeToConsole('onMessage - $update\n');
+      print('onMessage - $update');
     }
   }
 
   @override
   void onStatus(String type, String info) {
-    writeToConsole('onStatus - $type - $info\n');
+    print('onStatus - $type - $info');
   }
 
   void flash(TableCellElement cell, TableCellElement cell2) {
