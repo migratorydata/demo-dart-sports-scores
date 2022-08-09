@@ -4,7 +4,6 @@ import 'dart:html';
 import 'dart:typed_data';
 
 import 'package:migratorydata_client_dart_v6/client.dart';
-
 import 'configuration.dart';
 
 final tableMatches = querySelector('#matches') as TableElement;
@@ -12,15 +11,12 @@ final migratoryDataClient = MigratoryDataClient();
 
 void main() {
   createMatchesTable();
-
   connectClient();
-
   startSimulation();
 }
 
 void createMatchesTable() {
   var tBody = tableMatches.createTBody();
-
   matches.forEach((index, element) {
     var row = tBody.addRow();
     row.id = element['id'] as String;

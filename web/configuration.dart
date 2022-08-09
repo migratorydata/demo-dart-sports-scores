@@ -1,9 +1,9 @@
 import 'dart:math';
 
-final token = 'some-token';
-final encryption = false;
 final server = 'demo.migratorydata.com';
-final subjectPrefix = '/games/football/';
+final encryption = true;
+final token = 'some-token';
+final subjectPrefix = '/matches/football/';
 
 final rng = Random();
 

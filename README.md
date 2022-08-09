@@ -1,28 +1,53 @@
-Dart livescore demo web app.
+# Sports Scores Demo using Dart and MigratoryData w/ or w/o Kafka
 
-How To run demo
+This is a web-only app written in Dart. Its multi-platform version written in Dart with Flutter UI &mdash; which can be compiled as a web app, or as an Android or iOS mobile app, or as a desktop app for MacOS, Windows, or Linux &mdash; is available [here](https://github.com/migratorydata/demo-flutter-livescore).
 
-1. Install the following tools :
+## Prerequisites
+
+We assume you have the Dart language installed. Otherwise get it as detailed [here](https://dart.dev/get-dart). 
+
+Install the `webdev` package as follows:
 
 ```bash
 dart pub global activate webdev
-dart pub global activate stagehand
 ```
 
-2. Run the following command to get all the depedencies:
+## Use the existing MigratoryData deployment
+
+This app is configured to connect to a MigratoryData deployment available at `demo.migratorydata.com`, so you can run it without installing MigratoryData or Kafka.
+
+However, if you wish to run this demo with your MigratoryData deployment or your MigratoryData & Kafka deployment please install MigratoryData or MigratoryData & Kafka as detailed [here](INSTALL.md).
+
+## Get the code and install the dependencies
+
+Download this project by cloning it with the following command or by using any other download method:
 
 ```bash
-dart pub get
+$ git clone git@github.com:migratorydata/demo-dart-livescore.git
 ```
 
-3. To compile and run the example execute the following command:
+Change to the folder where you downloaded this project and run the following command to get the dependencies:
 
 ```bash
-webdev serve
+$ dart pub get
 ```
 
-4. Open in your web browser the following address:
+## Running in dev mode
 
-`http://localhost:8080`
+To compile and run the example execute the following command:
 
-5. Click on start simulation button to receive updates.
+```bash
+$ webdev serve
+```
+
+Open http://localhost:8080 to view this demo in your browser.
+
+## Deployment
+
+When you are ready to build your app for production, run:
+
+```bash
+$ webdev build
+``` 
+
+The app will be generated into the folder `build`. Copy it to your production web server.
