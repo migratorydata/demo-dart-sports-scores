@@ -1,6 +1,6 @@
 # Sports Scores Demo using Dart and MigratoryData w/ or w/o Kafka
 
-This is a web-only app written in Dart. Its multi-platform version written in Dart with Flutter UI &mdash; which can be compiled as a web app, or as an Android or iOS mobile app, or as a desktop app for MacOS, Windows, or Linux &mdash; is available [here](https://github.com/migratorydata/demo-flutter-livescore).
+This is a web-only app written in Dart. Its multi-platform version written in Dart with Flutter UI &mdash; which can be compiled as a web app, or as an Android or iOS mobile app, or as a desktop app for MacOS, Windows, or Linux &mdash; is available [here](https://github.com/migratorydata/demo-flutter-livescore). Please refer to the blog post [Building realtime web and mobile apps that scale to millions of users with Flutter and Kafka](https://migratorydata.com/blog/migratorydata-with-flutter-and-kafka/) for more context.
 
 ## Prerequisites
 
