@@ -23,7 +23,7 @@ However, if you wish to run this demo with your MigratoryData deployment or your
 Download this project by cloning it with the following command or by using any other download method:
 
 ```bash
-$ git clone git@github.com:migratorydata/demo-dart-livescore.git
+$ git clone https://github.com/migratorydata/demo-dart-sports-scores.git
 ```
 
 Change to the folder where you downloaded this project and run the following command to get the dependencies:
