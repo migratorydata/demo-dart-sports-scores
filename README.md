@@ -23,13 +23,13 @@ However, if you wish to run this demo with your MigratoryData deployment or your
 Download this project by cloning it with the following command or by using any other download method:
 
 ```bash
-$ git clone https://github.com/migratorydata/demo-dart-sports-scores.git
+git clone https://github.com/migratorydata/demo-dart-sports-scores.git
 ```
 
 Change to the folder where you downloaded this project and run the following command to get the dependencies:
 
 ```bash
-$ dart pub get
+dart pub get
 ```
 
 ## Running in dev mode
@@ -37,7 +37,7 @@ $ dart pub get
 To compile and run the example execute the following command:
 
 ```bash
-$ webdev serve
+webdev serve
 ```
 
 Open http://localhost:8080 to view this demo in your browser.
@@ -47,7 +47,7 @@ Open http://localhost:8080 to view this demo in your browser.
 When you are ready to build your app for production, run:
 
 ```bash
-$ webdev build
+webdev build
 ``` 
 
 The app will be generated into the folder `build`. Copy it to your production web server.
